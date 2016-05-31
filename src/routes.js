@@ -6,6 +6,8 @@ import {
     Chat,
     Home,
     Widgets,
+    Posts,
+    Profile,
     About,
     Login,
     LoginSuccess,
@@ -19,13 +21,14 @@ export default (store) => {
       const { auth: { user }} = store.getState();
       if (!user) {
         // oops, not logged in, so can't be here!
-        replace('/');
+        replace('login');
       }
       cb();
     }
 
     if (!isAuthLoaded(store.getState())) {
-      store.dispatch(loadAuth()).then(checkAuth);
+      // whether success or fail, it must exec checkAuth
+      store.dispatch(loadAuth()).then(checkAuth, checkAuth);
     } else {
       checkAuth();
     }
@@ -46,10 +49,12 @@ export default (store) => {
       </Route>
 
       { /* Routes */ }
+      <Route path="posts" component={Posts}/>
       <Route path="about" component={About}/>
       <Route path="login" component={Login}/>
       <Route path="survey" component={Survey}/>
       <Route path="widgets" component={Widgets}/>
+      <Route path="profile" component={Profile}/>
 
       { /* Catch all route */ }
       <Route path="*" component={NotFound} status={404} />

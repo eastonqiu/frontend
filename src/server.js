@@ -18,6 +18,7 @@ import { ReduxAsyncConnect, loadOnServer } from 'redux-async-connect';
 import createHistory from 'react-router/lib/createMemoryHistory';
 import {Provider} from 'react-redux';
 import getRoutes from './routes';
+import cookie from 'react-cookie';
 
 const targetUrl = 'http://' + config.apiHost + ':' + config.apiPort;
 const pretty = new PrettyError();
@@ -35,10 +36,13 @@ app.use(Express.static(path.join(__dirname, '..', 'static')));
 
 // Proxy to API server
 app.use('/api', (req, res) => {
+  console.log('proxy api');
   proxy.web(req, res, {target: targetUrl});
 });
 
 app.use('/ws', (req, res) => {
+  console.log('proxy ws');
+  proxy.web(req, res, {target: targetUrl});
   proxy.web(req, res, {target: targetUrl + '/ws'});
 });
 
@@ -61,12 +65,13 @@ proxy.on('error', (error, req, res) => {
 });
 
 app.use((req, res) => {
+  cookie.plugToRequest(req, res);
   if (__DEVELOPMENT__) {
     // Do not cache webpack stats: the script file would change since
     // hot module replacement is enabled in the development env
     webpackIsomorphicTools.refresh();
   }
-  const client = new ApiClient(req);
+  const client = new ApiClient();
   const memoryHistory = createHistory(req.originalUrl);
   const store = createStore(memoryHistory, client);
   const history = syncHistoryWithStore(memoryHistory, store);

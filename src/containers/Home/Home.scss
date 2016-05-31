@@ -5,56 +5,91 @@
     margin-bottom: 15px;
   }
 }
-.masthead {
-  background: #2d2d2d;
-  padding: 40px 20px;
-  color: white;
-  text-align: center;
+
+.searchBar {
   .logo {
-    $size: 200px;
-    margin: auto;
-    height: $size;
-    width: $size;
-    border-radius: $size / 2;
-    border: 1px solid $cyan;
-    box-shadow: inset 0 0 10px $cyan;
-    vertical-align: middle;
-    p {
-      line-height: $size;
-      margin: 0px;
-    }
+    height: 56px;
+    line-height: 56px;
+    padding-right: 8px;
+    float: left;
+
     img {
-      width: 75%;
-      margin: auto;
+      height: 80%;
     }
   }
-  h1 {
-    color: $cyan;
-    font-size: 4em;
-  }
-  h2 {
-    color: #ddd;
-    font-size: 2em;
-    margin: 20px;
-  }
-  a {
-    color: #ddd;
-  }
-  p {
-    margin: 10px;
-  }
-  .humility {
-    color: $humility;
-    a {
-      color: $humility;
-    }
-  }
-  .github {
-    font-size: 1.5em;
+
+  form {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
-.counterContainer {
-  text-align: center;
-  margin: 20px;
+.slide {
+  img {
+    width: 100%;
+  }
+}
+
+.quickEntry { 
+  padding-top: 10px;
+  a {
+    width: 25%;
+    float: left;
+    color: #666;
+    text-align: center;
+    display: block;
+    padding-bottom: 10px;
+
+    img {
+      display: block;
+      width: 45px;
+      height: 45px;
+      margin: 0 auto 6px auto;
+    }
+  }
+  &:after {
+    clear: both;
+    content: ".";
+    height: 0;
+    visibility: hidden;
+    font-size: 0;
+    display: block; 
+  }
+}
+
+.showBlock {
+  width: 100%;
+  padding-top: 10px;
+
+  .blockTitle {
+    width: 100%;
+    font-size: 16px;
+    color: #ca1327;
+    padding: 0px 8px 0 8px;
+    float: left;
+
+    a {
+      float: right;
+      color: #666;
+      font-size: 13px;
+    }
+  }
+}
+
+.goodsList {
+  width: 100%;
+  padding-top: 4px;
+  .goods {
+    width: 33%;
+    text-align: center;
+    float: left;
+
+    img {
+      width: 80%;
+    }
+    span {
+      color: #ed5657;
+      font-size: 13px;
+    }
+  }
 }

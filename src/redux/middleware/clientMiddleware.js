@@ -1,3 +1,5 @@
+import { autoLogout } from '../modules/auth';
+
 export default function clientMiddleware(client) {
   return ({dispatch, getState}) => {
     return next => action => {
@@ -16,7 +18,14 @@ export default function clientMiddleware(client) {
       const actionPromise = promise(client);
       actionPromise.then(
         (result) => next({...rest, result, type: SUCCESS}),
-        (error) => next({...rest, error, type: FAILURE})
+        (status, error) => {
+          console.log('error....');
+          console.log(status);
+          if (status === 401) {
+            next(autoLogout());
+          }
+          next({...rest, error, type: FAILURE});
+        }
       ).catch((error)=> {
         console.error('MIDDLEWARE ERROR:', error);
         next({...rest, error, type: FAILURE});

@@ -10,10 +10,12 @@ const environment = {
 }[process.env.NODE_ENV || 'development'];
 
 module.exports = Object.assign({
-  host: process.env.HOST || 'localhost',
-  port: process.env.PORT,
-  apiHost: process.env.APIHOST || 'localhost',
-  apiPort: process.env.APIPORT,
+  host: process.env.HOST || 'api.qqm.lingyunstrong.com',
+  port: process.env.PORT || 3000,
+  apiHost: process.env.APIHOST || 'api.qqm.lingyunstrong.com',
+  apiPort: process.env.APIPORT || 80,
+  apiPrefix: process.env.API_PREFIX || '/api/v1',
+  cookieDomain: '',
   app: {
     title: 'React Redux Example',
     description: 'All the modern best practices in one example.',

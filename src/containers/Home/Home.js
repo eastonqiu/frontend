@@ -1,172 +1,144 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
-import { CounterButton, GithubButton } from 'components';
-import config from '../../config';
 import Helmet from 'react-helmet';
+import {Navbar, Glyphicon} from 'react-bootstrap';
 
 export default class Home extends Component {
   render() {
     const styles = require('./Home.scss');
-    // require the logo image both from client and server
-    const logoImage = require('./logo.png');
     return (
       <div className={styles.home}>
         <Helmet title="Home"/>
-        <div className={styles.masthead}>
-          <div className="container">
+
+        <Navbar fixedTop>
+          <div className={styles.searchBar}>
             <div className={styles.logo}>
-              <p>
-                <img src={logoImage}/>
-              </p>
+              <img src="http://ww2.sinaimg.cn/crop.0.0.1080.1080.1024/d773ebfajw8eum57eobkwj20u00u075w.jpg" />
             </div>
-            <h1>{config.app.title}</h1>
-
-            <h2>{config.app.description}</h2>
-
-            <p>
-              <a className={styles.github} href="https://github.com/erikras/react-redux-universal-hot-example"
-                 target="_blank">
-                <i className="fa fa-github"/> View on Github
-              </a>
-            </p>
-            <GithubButton user="erikras"
-                          repo="react-redux-universal-hot-example"
-                          type="star"
-                          width={160}
-                          height={30}
-                          count large/>
-            <GithubButton user="erikras"
-                          repo="react-redux-universal-hot-example"
-                          type="fork"
-                          width={160}
-                          height={30}
-                          count large/>
-
-            <p className={styles.humility}>
-              Created and maintained by <a href="https://twitter.com/erikras" target="_blank">@erikras</a>.
-            </p>
+            <form className="navbar-form navbar-left">
+              <div className="input-group">
+                <input type="text" ref="email" placeholder="Search" className="form-control"/>
+                <span className="input-group-btn">
+                  <button type="submit" className="btn btn-success">搜索</button>
+                </span>
+              </div>
+            </form>
           </div>
-        </div>
+        </Navbar>
 
         <div className="container">
-          <div className={styles.counterContainer}>
-            <CounterButton multireducerKey="counter1"/>
-            <CounterButton multireducerKey="counter2"/>
-            <CounterButton multireducerKey="counter3"/>
+          {/* row style to remove the padding left and right */}
+          <div className="row">
+
+            {/* slide part */}
+            <div className={styles.slide}>
+              <img src="http://m.360buyimg.com/mobilecms/s720x350_jfs/t2791/174/1658691661/77234/4e3a0d2d/5745843cN92616518.jpg!q70.jpg" width="100%" />
+            </div>
+
+            {/* quick entry nav */}
+            <nav className={styles.quickEntry}>
+              <a href="#">
+                <img src="http://m.360buyimg.com/mobilecms/s78x78_jfs/t2839/96/1433596951/3566/4dc2eaf4/573efddfN85ed7181.png"/>
+                <span>超市</span>
+              </a>
+              <a href="#">
+                <img src="http://m.360buyimg.com/mobilecms/s78x78_jfs/t2821/182/1679888879/6257/cc125453/574699b9Ncddac4b4.png"/>
+                <span>海淘</span>
+              </a>
+              <a href="#">
+                <img src="http://m.360buyimg.com/mobilecms/s78x78_jfs/t2899/335/661406691/2594/9180c6fc/57218c63Nc8120bc4.png"/>
+                <span>充值</span>
+              </a>
+              <a href="#">
+                <img src="http://m.360buyimg.com/mobilecms/s78x78_jfs/t2812/145/705232823/5051/22bb76d6/57218c85N56467fac.png"/>
+                <span>服装</span>
+              </a>
+              <a href="#">
+                <img src="http://m.360buyimg.com/mobilecms/s78x78_jfs/t2644/181/695458124/3496/bc796b2b/57218cc5N307dc848.png"/>
+                <span>理财中心</span>
+              </a>
+              <a href="#">
+                <img src="http://m.360buyimg.com/mobilecms/s78x78_jfs/t2764/361/1390006842/3447/37d7580e/573e6352N92e81cbd.png"/>
+                <span>我要领券</span>
+              </a>
+              <a href="#">
+                <img src="http://m.360buyimg.com/mobilecms/s78x78_jfs/t2617/268/700561275/3050/b4d22b43/57218d24N94a9bd28.png"/>
+                <span>物流查询</span>
+              </a>
+              <a href="#">
+                <img src="http://m.360buyimg.com/mobilecms/s78x78_jfs/t2785/198/692109241/3256/e7ac7a79/57218d43N273a7542.png"/>
+                <span>我的关注</span>
+              </a>
+            </nav>
+
+            {/* goods block */}
+            <div className={styles.showBlock}>
+              <div className={styles.blockTitle}>
+                <span>畅销区</span>
+                <a href="#">
+                  更多
+                  <Glyphicon className={styles.ricon} glyph="menu-right"/>
+                </a>
+              </div>
+              {/* goods */}
+              <div className={styles.goodsList}>
+                <div className={styles.goods}>
+                  <a href="#">
+                    <img src="http://m.360buyimg.com/mobilecms/s220x220_jfs/t2146/123/360714867/93332/1a0862a4/56021f61N7bd76e30.jpg!q70.jpg"/>
+                    <span>$155</span>
+                  </a>
+                </div>
+
+                <div className={styles.goods}>
+                  <a href="#">
+                    <img src="http://m.360buyimg.com/mobilecms/s220x220_jfs/t2146/123/360714867/93332/1a0862a4/56021f61N7bd76e30.jpg!q70.jpg"/>
+                    <span>$155</span>
+                  </a>
+                </div>
+
+                <div className={styles.goods}>
+                  <a href="#">
+                    <img src="http://m.360buyimg.com/mobilecms/s220x220_jfs/t2146/123/360714867/93332/1a0862a4/56021f61N7bd76e30.jpg!q70.jpg"/>
+                    <span>$155</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* goods block */}
+            <div className={styles.showBlock}>
+              <div className={styles.blockTitle}>
+                <span>精品区</span>
+                <a href="#">
+                  更多
+                  <Glyphicon className={styles.ricon} glyph="menu-right"/>
+                </a>
+              </div>
+              {/* goods */}
+              <div className={styles.goodsList}>
+                <div className={styles.goods}>
+                  <a href="#">
+                    <img src="http://m.360buyimg.com/mobilecms/s220x220_jfs/t2146/123/360714867/93332/1a0862a4/56021f61N7bd76e30.jpg!q70.jpg"/>
+                    <span>$155</span>
+                  </a>
+                </div>
+
+                <div className={styles.goods}>
+                  <a href="#">
+                    <img src="http://m.360buyimg.com/mobilecms/s220x220_jfs/t2146/123/360714867/93332/1a0862a4/56021f61N7bd76e30.jpg!q70.jpg"/>
+                    <span>$155</span>
+                  </a>
+                </div>
+
+                <div className={styles.goods}>
+                  <a href="#">
+                    <img src="http://m.360buyimg.com/mobilecms/s220x220_jfs/t2146/123/360714867/93332/1a0862a4/56021f61N7bd76e30.jpg!q70.jpg"/>
+                    <span>$155</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
           </div>
-
-          <p>This starter boilerplate app uses the following technologies:</p>
-
-          <ul>
-            <li>
-              <del>Isomorphic</del>
-              {' '}
-              <a href="https://medium.com/@mjackson/universal-javascript-4761051b7ae9">Universal</a> rendering
-            </li>
-            <li>Both client and server make calls to load data from separate API server</li>
-            <li><a href="https://github.com/facebook/react" target="_blank">React</a></li>
-            <li><a href="https://github.com/rackt/react-router" target="_blank">React Router</a></li>
-            <li><a href="http://expressjs.com" target="_blank">Express</a></li>
-            <li><a href="http://babeljs.io" target="_blank">Babel</a> for ES6 and ES7 magic</li>
-            <li><a href="http://webpack.github.io" target="_blank">Webpack</a> for bundling</li>
-            <li><a href="http://webpack.github.io/docs/webpack-dev-middleware.html" target="_blank">Webpack Dev Middleware</a>
-            </li>
-            <li><a href="https://github.com/glenjamin/webpack-hot-middleware" target="_blank">Webpack Hot Middleware</a></li>
-            <li><a href="https://github.com/rackt/redux" target="_blank">Redux</a>'s futuristic <a
-              href="https://facebook.github.io/react/blog/2014/05/06/flux.html" target="_blank">Flux</a> implementation
-            </li>
-            <li><a href="https://github.com/gaearon/redux-devtools" target="_blank">Redux Dev Tools</a> for next
-              generation DX (developer experience).
-              Watch <a href="https://www.youtube.com/watch?v=xsSnOQynTHs" target="_blank">Dan Abramov's talk</a>.
-            </li>
-            <li><a href="https://github.com/rackt/redux-router" target="_blank">Redux Router</a> Keep
-              your router state in your Redux store
-            </li>
-            <li><a href="http://eslint.org" target="_blank">ESLint</a> to maintain a consistent code style</li>
-            <li><a href="https://github.com/erikras/redux-form" target="_blank">redux-form</a> to manage form state
-              in Redux
-            </li>
-            <li><a href="https://github.com/erikras/multireducer" target="_blank">multireducer</a> combine several
-              identical reducer states into one key-based reducer</li>
-            <li><a href="https://github.com/webpack/style-loader" target="_blank">style-loader</a> and <a
-              href="https://github.com/jtangelder/sass-loader" target="_blank">sass-loader</a> to allow import of
-              stylesheets
-            </li>
-            <li><a href="https://github.com/shakacode/bootstrap-sass-loader" target="_blank">bootstrap-sass-loader</a> and <a
-              href="https://github.com/gowravshekar/font-awesome-webpack" target="_blank">font-awesome-webpack</a> to customize Bootstrap and FontAwesome
-            </li>
-            <li><a href="http://socket.io/">socket.io</a> for real-time communication</li>
-          </ul>
-
-          <h3>Features demonstrated in this project</h3>
-
-          <dl>
-            <dt>Multiple components subscribing to same redux store slice</dt>
-            <dd>
-              The <code>App.js</code> that wraps all the pages contains an <code>InfoBar</code> component
-              that fetches data from the server initially, but allows for the user to refresh the data from
-              the client. <code>About.js</code> contains a <code>MiniInfoBar</code> that displays the same
-              data.
-            </dd>
-            <dt>Server-side data loading</dt>
-            <dd>
-              The <Link to="/widgets">Widgets page</Link> demonstrates how to fetch data asynchronously from
-              some source that is needed to complete the server-side rendering. <code>Widgets.js</code>'s
-              <code>asyncConnect()</code> function is called before the widgets page is loaded, on either the server
-              or the client, allowing all the widget data to be loaded and ready for the page to render.
-            </dd>
-            <dt>Data loading errors</dt>
-            <dd>
-              The <Link to="/widgets">Widgets page</Link> also demonstrates how to deal with data loading
-              errors in Redux. The API endpoint that delivers the widget data intentionally fails 33% of
-              the time to highlight this. The <code>clientMiddleware</code> sends an error action which
-              the <code>widgets</code> reducer picks up and saves to the Redux state for presenting to the user.
-            </dd>
-            <dt>Session based login</dt>
-            <dd>
-              On the <Link to="/login">Login page</Link> you can submit a username which will be sent to the server
-              and stored in the session. Subsequent refreshes will show that you are still logged in.
-            </dd>
-            <dt>Redirect after state change</dt>
-            <dd>
-              After you log in, you will be redirected to a Login Success page. This <strike>magic</strike> logic
-              is performed in <code>componentWillReceiveProps()</code> in <code>App.js</code>, but it could
-              be done in any component that listens to the appropriate store slice, via Redux's <code>@connect</code>,
-              and pulls the router from the context.
-            </dd>
-            <dt>Auth-required views</dt>
-            <dd>
-              The aforementioned Login Success page is only visible to you if you are logged in. If you try
-              to <Link to="/loginSuccess">go there</Link> when you are not logged in, you will be forwarded back
-              to this home page. This <strike>magic</strike> logic is performed by the
-              <code>onEnter</code> hook within <code>routes.js</code>.
-            </dd>
-            <dt>Forms</dt>
-            <dd>
-              The <Link to="/survey">Survey page</Link> uses the
-              still-experimental <a href="https://github.com/erikras/redux-form" target="_blank">redux-form</a> to
-              manage form state inside the Redux store. This includes immediate client-side validation.
-            </dd>
-            <dt>WebSockets / socket.io</dt>
-            <dd>
-              The <Link to="/chat">Chat</Link> uses the socket.io technology for real-time
-              communication between clients. You need to <Link to="/login">login</Link> first.
-            </dd>
-          </dl>
-
-          <h3>From the author</h3>
-
-          <p>
-            I cobbled this together from a wide variety of similar "starter" repositories. As I post this in June 2015,
-            all of these libraries are right at the bleeding edge of web development. They may fall out of fashion as
-            quickly as they have come into it, but I personally believe that this stack is the future of web development
-            and will survive for several years. I'm building my new projects like this, and I recommend that you do,
-            too.
-          </p>
-
-          <p>Thanks for taking the time to check this out.</p>
-
-          <p>– Erik Rasmussen</p>
         </div>
       </div>
     );

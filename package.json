@@ -45,6 +45,7 @@
         "NODE_PATH": "./src",
         "NODE_ENV": "production",
         "PORT": 8080,
+        "APIHOST": "api.qqm.lingyunstrong.com",
         "APIPORT": 3030
       }
     },
@@ -53,6 +54,7 @@
       "env": {
         "NODE_PATH": "./api",
         "NODE_ENV": "production",
+        "APIHOST": "api.qqm.lingyunstrong.com",
         "APIPORT": 3030
       }
     },
@@ -62,7 +64,9 @@
         "NODE_PATH": "./src",
         "NODE_ENV": "development",
         "PORT": 3000,
-        "APIPORT": 3030
+        "APIHOST": "api.qqm.lingyunstrong.com",
+        "APIPORT": 80,
+        "API_PREFIX": "/api/v1"
       }
     },
     "start-dev-api": {
@@ -70,6 +74,7 @@
       "env": {
         "NODE_PATH": "./api",
         "NODE_ENV": "development",
+        "APIHOST": "api.qqm.lingyunstrong.com",
         "APIPORT": 3030
       }
     },
@@ -79,6 +84,7 @@
         "UV_THREADPOOL_SIZE": 100,
         "NODE_PATH": "./src",
         "PORT": 3000,
+        "HOST": "api.qqm.lingyunstrong.com",
         "APIPORT": 3030
       }
     },
@@ -173,6 +179,7 @@
     "phantomjs-polyfill": "0.0.1",
     "react-a11y": "^0.2.6",
     "react-addons-test-utils": "^0.14.0",
+    "react-cookie": "^0.4.5",
     "react-transform-catch-errors": "^1.0.0",
     "react-transform-hmr": "^1.0.1",
     "redbox-react": "^1.1.1",

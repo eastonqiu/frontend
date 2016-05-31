@@ -15,9 +15,11 @@ export default class Login extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const input = this.refs.username;
-    this.props.login(input.value);
-    input.value = '';
+    const email = this.refs.email;
+    const password = this.refs.password;
+    this.props.login(email.value, password.value);
+    email.value = '';
+    password.value = '';
   }
 
   render() {
@@ -31,7 +33,8 @@ export default class Login extends Component {
         <div>
           <form className="login-form form-inline" onSubmit={this.handleSubmit}>
             <div className="form-group">
-              <input type="text" ref="username" placeholder="Enter a username" className="form-control"/>
+              <input type="text" ref="email" placeholder="Enter a email" className="form-control"/>
+              <input type="password" ref="password" placeholder="Enter a password" className="form-control"/>
             </div>
             <button className="btn btn-success" onClick={this.handleSubmit}><i className="fa fa-sign-in"/>{' '}Log In
             </button>

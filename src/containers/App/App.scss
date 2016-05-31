@@ -16,7 +16,21 @@
     font-size: 2em;
     line-height: 20px;
   }
+  .nav {
+    -moz-column-count: 3; /* Firefox */
+    -webkit-column-count: 3; /* Safari and Chrome */
+    column-count: 3;
+    width: inherit; 
+  }
+  .nav li {
+    width: 100%;
+    text-align: center;
+  }
+  .nav > li > a {
+    padding: 0;
+  }
 }
 .appContent {
-  margin: 50px 0; // for fixed navbar
+  margin-bottom: 60px; // for fixed navbar at bottom
 }
+
