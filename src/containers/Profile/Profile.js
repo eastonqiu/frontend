@@ -34,13 +34,13 @@ export default class Profile extends Component {
           {error}
         </div>}
 
-        (user &&
+        {user &&
         <div className={styles.fullHeight + ' row'}>
           <div className={styles.userCard}>
             <img src={user.avatar} />
             <div className={styles.info}>{user.nickname}</div>
             <Glyphicon className={styles.ricon} glyph="menu-right"/>
-          </div>)
+          </div>
 
           <div className={styles.profileItems}>
             <ListGroup>
@@ -53,7 +53,7 @@ export default class Profile extends Component {
             </ListGroup>
           </div>
         </div>
-        )
+        }
       </div>
     );
   }

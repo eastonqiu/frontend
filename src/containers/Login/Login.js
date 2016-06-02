@@ -26,7 +26,7 @@ export default class Login extends Component {
   render() {
     const {user, logout} = this.props;
     const styles = require('./Login.scss');
-    const snsUrl = 'http://' + config.apiHost + ':' + config.apiPort + '/sns/weixin?redirect=http://' + config.host + config.port + '/profile';
+    const snsUrl = 'http://' + config.apiHost + ':' + config.apiPort + '/sns/weixin?redirect=http://' + config.host + ':' + config.port + '/profile';
     return (
       <div className={styles.loginPage + ' container'}>
         <Helmet title="Login"/>
