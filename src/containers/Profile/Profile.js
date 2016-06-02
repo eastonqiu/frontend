@@ -18,7 +18,7 @@ export default class Profile extends Component {
 
   render() {
     // const {posts, error, loading, load} = this.props;
-    const {error, loading} = this.props;
+    const {user, error, loading} = this.props;
     let refreshClassName = 'fa fa-refresh';
     if (loading) {
       refreshClassName += ' fa-spin';
