@@ -4,11 +4,16 @@ import Glyphicon from 'react-bootstrap/lib/Glyphicon';
 import ListGroup from 'react-bootstrap/lib/ListGroup';
 import ListGroupItem from 'react-bootstrap/lib/ListGroupItem';
 import { LinkContainer } from 'react-router-bootstrap';
+import { connect } from 'react-redux';
 
+@connect(
+  state => ({user: state.auth.user}),
+)
 export default class Profile extends Component {
   static propTypes = {
     error: PropTypes.string,
     loading: PropTypes.bool,
+    user: PropTypes.object,
   };
 
   render() {
@@ -29,12 +34,13 @@ export default class Profile extends Component {
           {error}
         </div>}
 
+        (user &&
         <div className={styles.fullHeight + ' row'}>
           <div className={styles.userCard}>
-            <img src="http://ww2.sinaimg.cn/crop.0.0.1080.1080.1024/d773ebfajw8eum57eobkwj20u00u075w.jpg" />
-            <div className={styles.info}>昵称</div>
+            <img src={user.avatar} />
+            <div className={styles.info}>{user.nickname}</div>
             <Glyphicon className={styles.ricon} glyph="menu-right"/>
-          </div>
+          </div>)
 
           <div className={styles.profileItems}>
             <ListGroup>
@@ -47,6 +53,7 @@ export default class Profile extends Component {
             </ListGroup>
           </div>
         </div>
+        )
       </div>
     );
   }

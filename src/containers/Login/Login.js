@@ -2,6 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import Helmet from 'react-helmet';
 import * as authActions from 'redux/modules/auth';
+import config from '../../config';
 
 @connect(
   state => ({user: state.auth.user}),
@@ -25,6 +26,7 @@ export default class Login extends Component {
   render() {
     const {user, logout} = this.props;
     const styles = require('./Login.scss');
+    const snsUrl = 'http://' + config.apiHost + ':' + config.apiPort + '/sns/weixin?redirect=' + window.location.origin + '/profile';
     return (
       <div className={styles.loginPage + ' container'}>
         <Helmet title="Login"/>
@@ -39,7 +41,8 @@ export default class Login extends Component {
             <button className="btn btn-success" onClick={this.handleSubmit}><i className="fa fa-sign-in"/>{' '}Log In
             </button>
           </form>
-          <p>This will "log you in" as this user, storing the username in the session of the API server.</p>
+          <p>您还可以通过一下方式直接登录</p>
+          <a href={snsUrl}>微信登录</a>
         </div>
         }
         {user &&

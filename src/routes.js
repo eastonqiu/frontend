@@ -46,6 +46,7 @@ export default (store) => {
       <Route onEnter={requireLogin}>
         <Route path="chat" component={Chat}/>
         <Route path="loginSuccess" component={LoginSuccess}/>
+        <Route path="profile" component={Profile}/>
       </Route>
 
       { /* Routes */ }
@@ -54,7 +55,6 @@ export default (store) => {
       <Route path="login" component={Login}/>
       <Route path="survey" component={Survey}/>
       <Route path="widgets" component={Widgets}/>
-      <Route path="profile" component={Profile}/>
 
       { /* Catch all route */ }
       <Route path="*" component={NotFound} status={404} />
