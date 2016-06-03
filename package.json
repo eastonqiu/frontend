@@ -43,14 +43,24 @@
       "command": "node ./bin/server.js",
       "env": {
         "NODE_PATH": "./src",
-        "NODE_ENV": "production"
+        "NODE_ENV": "production",
+        "HOST": "xxx.dev.yunchongba.com",
+        "PORT": 3000,
+        "APIHOST": "xxx.dev.yunchongba.com",
+        "APIPORT": 4000,
+        "API_PREFIX": "/api/v1"
       }
     },
     "start-dev": {
       "command": "node ./bin/server.js",
       "env": {
         "NODE_PATH": "./src",
-        "NODE_ENV": "development"
+        "NODE_ENV": "development",
+        "HOST": "p.qqm.lingyunstrong.com",
+        "PORT": 3000,
+        "APIHOST": "p.qqm.lingyunstrong.com",
+        "APIPORT": 80,
+        "API_PREFIX": "/api/v1"
       }
     },
     "watch-client": {
