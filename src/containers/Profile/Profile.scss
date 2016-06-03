@@ -66,6 +66,17 @@ body > div > div > div {
 
 .profileItems {
   height: 80%;
+}
+
+.blockBg {
+  background: #eee !important;
+}
+
+.blockBg > * {
+  background: #fff;
+}
+
+.blockBg > *+* {
   margin-top: 20px;
 }
 

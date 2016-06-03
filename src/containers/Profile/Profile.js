@@ -35,14 +35,14 @@ export default class Profile extends Component {
         </div>}
 
         {user &&
-        <div className={styles.fullHeight + ' row'}>
+        <div className={styles.fullHeight + ' ' + styles.blockBg + ' row'}>
           <div className={styles.userCard}>
             <img src={user.avatar} />
             <div className={styles.info}>{user.nickname}</div>
             <Glyphicon className={styles.ricon} glyph="menu-right"/>
           </div>
 
-          <div className={styles.profileItems}>
+          <div className={styles.profileItems + ' ' + styles.blockBg}>
             <ListGroup>
               <LinkContainer to="/posts"><ListGroupItem>我的订单</ListGroupItem></LinkContainer>
               <LinkContainer to="/posts"><ListGroupItem>我的收藏</ListGroupItem></LinkContainer>
