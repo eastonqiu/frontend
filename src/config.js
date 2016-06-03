@@ -10,9 +10,9 @@ const environment = {
 }[process.env.NODE_ENV || 'development'];
 
 module.exports = Object.assign({
-  host: process.env.HOST || 'xxx.dev.yunchongba.com',
+  host: process.env.HOST || 'localhost',
   port: process.env.PORT || 3000,
-  apiHost: process.env.APIHOST || 'xxx.dev.yunchongba.com',
+  apiHost: process.env.APIHOST || 'localhost',
   apiPort: process.env.APIPORT || 4000,
   apiPrefix: process.env.API_PREFIX || '/api/v1',
   cookieDomain: '',

@@ -43,39 +43,14 @@
       "command": "node ./bin/server.js",
       "env": {
         "NODE_PATH": "./src",
-        "NODE_ENV": "production",
-        "PORT": 3000,
-        "APIHOST": "xxx.dev.yunchongba.com",
-        "APIPORT": 4000
-      }
-    },
-    "start-prod-api": {
-      "command": "node ./bin/api.js",
-      "env": {
-        "NODE_PATH": "./api",
-        "NODE_ENV": "production",
-        "APIHOST": "xxx.dev.yunchongba.com",
-        "APIPORT": 3030
+        "NODE_ENV": "production"
       }
     },
     "start-dev": {
       "command": "node ./bin/server.js",
       "env": {
         "NODE_PATH": "./src",
-        "NODE_ENV": "development",
-        "PORT": 3000,
-        "APIHOST": "xxx.dev.yunchongba.com",
-        "APIPORT": 4000,
-        "API_PREFIX": "/api/v1"
-      }
-    },
-    "start-dev-api": {
-      "command": "node ./bin/api.js",
-      "env": {
-        "NODE_PATH": "./api",
-        "NODE_ENV": "development",
-        "APIHOST": "xxx.dev.yunchongba.com",
-        "APIPORT": 3030
+        "NODE_ENV": "development"
       }
     },
     "watch-client": {
@@ -83,15 +58,22 @@
       "env": {
         "UV_THREADPOOL_SIZE": 100,
         "NODE_PATH": "./src",
+        "HOST": "p.qqm.lingyunstrong.com",
         "PORT": 3000,
-        "HOST": "xxx.dev.yunchongba.com",
-        "APIPORT": 4000
+        "APIHOST": "p.qqm.lingyunstrong.com",
+        "APIPORT": 80,
+        "API_PREFIX": "/api/v1"
       }
     },
     "build": {
       "command": "webpack --verbose --colors --display-error-details --config webpack/prod.config.js",
       "env": {
-        "NODE_ENV": "production"
+        "NODE_ENV": "production",
+        "HOST": "xxx.dev.yunchongba.com",
+        "PORT": 3000,
+        "APIHOST": "xxx.dev.yunchongba.com",
+        "APIPORT": 4000,
+        "API_PREFIX": "/api/v1"
       }
     }
   },
