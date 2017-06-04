@@ -13,8 +13,8 @@ module.exports = Object.assign({
   host: process.env.HOST || 'localhost',
   port: process.env.PORT || 3000,
   apiHost: process.env.APIHOST || 'localhost',
-  apiPort: process.env.APIPORT || 4000,
-  apiPrefix: process.env.API_PREFIX || '/api/v1',
+  apiPort: process.env.APIPORT || 81,
+  apiPrefix: process.env.API_PREFIX || '/api',
   cookieDomain: '',
   app: {
     title: 'React Redux Example',

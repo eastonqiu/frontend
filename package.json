@@ -44,11 +44,11 @@
       "env": {
         "NODE_PATH": "./src",
         "NODE_ENV": "production",
-        "HOST": "xxx.dev.yunchongba.com",
+        "HOST": "localhost",
         "PORT": 3000,
-        "APIHOST": "xxx.dev.yunchongba.com",
-        "APIPORT": 4000,
-        "API_PREFIX": "/api/v1"
+        "APIHOST": "localhost",
+        "APIPORT": 81,
+        "API_PREFIX": "/api"
       }
     },
     "start-dev": {
@@ -56,11 +56,11 @@
       "env": {
         "NODE_PATH": "./src",
         "NODE_ENV": "development",
-        "HOST": "p.qqm.lingyunstrong.com",
+        "HOST": "localhost",
         "PORT": 3000,
-        "APIHOST": "p.qqm.lingyunstrong.com",
-        "APIPORT": 80,
-        "API_PREFIX": "/api/v1"
+        "APIHOST": "localhost",
+        "APIPORT": 81,
+        "API_PREFIX": "/api"
       }
     },
     "watch-client": {
@@ -68,22 +68,22 @@
       "env": {
         "UV_THREADPOOL_SIZE": 100,
         "NODE_PATH": "./src",
-        "HOST": "p.qqm.lingyunstrong.com",
+        "HOST": "localhost",
         "PORT": 3000,
-        "APIHOST": "p.qqm.lingyunstrong.com",
-        "APIPORT": 80,
-        "API_PREFIX": "/api/v1"
+        "APIHOST": "localhost",
+        "APIPORT": 81,
+        "API_PREFIX": "/api"
       }
     },
     "build": {
       "command": "webpack --verbose --colors --display-error-details --config webpack/prod.config.js",
       "env": {
         "NODE_ENV": "production",
-        "HOST": "xxx.dev.yunchongba.com",
+        "HOST": "localhost",
         "PORT": 3000,
-        "APIHOST": "xxx.dev.yunchongba.com",
-        "APIPORT": 4000,
-        "API_PREFIX": "/api/v1"
+        "APIHOST": "localhost",
+        "APIPORT": 81,
+        "API_PREFIX": "/api"
       }
     }
   },
@@ -124,6 +124,7 @@
     "react-router": "2.0.0",
     "react-router-bootstrap": "^0.20.1",
     "react-router-redux": "^4.0.0",
+    "react-weui": "^1.0.3",
     "redux": "^3.0.4",
     "redux-async-connect": "^1.0.0-rc2",
     "redux-form": "^3.0.12",
@@ -135,7 +136,8 @@
     "superagent": "^1.4.0",
     "url-loader": "^0.5.7",
     "warning": "^2.1.0",
-    "webpack-isomorphic-tools": "^2.2.18"
+    "webpack-isomorphic-tools": "^2.2.18",
+    "weui": "^1.1.0"
   },
   "devDependencies": {
     "autoprefixer-loader": "^3.1.0",

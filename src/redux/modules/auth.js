@@ -29,7 +29,7 @@ export default function reducer(state = initialState, action = {}) {
         ...state,
         loading: false,
         loaded: true,
-        user: action.result.data.user
+        user: action.result.user
       };
     case LOAD_FAIL:
       console.log('load fail');
@@ -45,7 +45,7 @@ export default function reducer(state = initialState, action = {}) {
         loggingIn: true
       };
     case LOGIN_SUCCESS:
-      const data = action.result.data;
+      const data = action.result;
       cookie.save('user', data.user);
       cookie.save('token', data.token);
       return {
@@ -54,6 +54,7 @@ export default function reducer(state = initialState, action = {}) {
         user: data.user
       };
     case LOGIN_FAIL:
+      console.log('login result fail');
       return {
         ...state,
         loggingIn: false,
@@ -101,7 +102,7 @@ export function isLoaded(globalState) {
 export function load() {
   return {
     types: [LOAD, LOAD_SUCCESS, LOAD_FAIL],
-    promise: (client) => client.get('/getUserInfo')
+    promise: (client) => client.get('/profile')
   };
 }
 

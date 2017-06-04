@@ -35,9 +35,10 @@ app.use(favicon(path.join(__dirname, '..', 'static', 'favicon.ico')));
 app.use(Express.static(path.join(__dirname, '..', 'static')));
 
 // Proxy to API server
-app.use('/api', (req, res) => {
-  console.log('proxy api');
-  proxy.web(req, res, {target: targetUrl});
+app.use(config.apiPrefix, (req, res) => {
+  console.log('proxy api: ' + targetUrl + config.apiPrefix);
+  console.log(req.params);
+  proxy.web(req, res, {target: targetUrl + config.apiPrefix});
 });
 
 app.use('/ws', (req, res) => {
@@ -104,7 +105,6 @@ app.use((req, res) => {
         res.status(200);
 
         global.navigator = {userAgent: req.headers['user-agent']};
-
         res.send('<!doctype html>\n' +
           ReactDOM.renderToString(<Html assets={webpackIsomorphicTools.assets()} component={component} store={store}/>));
       });

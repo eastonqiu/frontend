@@ -38,7 +38,7 @@ export default class Profile extends Component {
         <div className={styles.fullHeight + ' ' + styles.blockBg + ' row'}>
           <div className={styles.userCard}>
             <img src={user.avatar} />
-            <div className={styles.info}>{user.nickname}</div>
+            <div className={styles.info}>{user.name}</div>
             <Glyphicon className={styles.ricon} glyph="menu-right"/>
           </div>
 

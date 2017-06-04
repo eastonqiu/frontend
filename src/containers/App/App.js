@@ -6,7 +6,6 @@ import Nav from 'react-bootstrap/lib/Nav';
 import NavItem from 'react-bootstrap/lib/NavItem';
 import Glyphicon from 'react-bootstrap/lib/Glyphicon';
 import Helmet from 'react-helmet';
-// import { isLoaded as isInfoLoaded, load as loadInfo } from 'redux/modules/info';
 import { isLoaded as isAuthLoaded, load as loadAuth, logout } from 'redux/modules/auth';
 // import { InfoBar } from 'components';
 import { push } from 'react-router-redux';
@@ -18,9 +17,6 @@ import { asyncConnect } from 'redux-async-connect';
     const promises = [];
 
     console.log('App');
-    // if (!isInfoLoaded(getState())) {
-    //  promises.push(dispatch(loadInfo()));
-    // }
     if (!isAuthLoaded(getState())) {
       promises.push(dispatch(loadAuth()));
     }
